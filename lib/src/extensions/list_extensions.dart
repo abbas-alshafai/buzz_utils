@@ -1,3 +1,5 @@
+import '../utils/string_utils.dart';
+
 extension ListExtension on List {
   T getFirstNonNull<T>() => firstWhere((element) => element != null);
 
@@ -27,3 +29,21 @@ extension ListExtension on List {
     return sublist(from, to);
   }
 }
+
+
+extension ListNullableString on List<String?> {
+
+  /// This could be useful for isEmpty() method, where you can pass multiple
+  /// nullable fields in a list, rather than checking if every field is not null
+  bool containsNonBlank(){
+    for(final v in this){
+      if(StringUtils.instance.isNotBlank(v)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+}
+
+
