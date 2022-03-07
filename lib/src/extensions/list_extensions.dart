@@ -14,7 +14,7 @@ extension ListExtension on List {
     return lists;
   }
 
-  List chunkList({int? chunkSize, int? chunkNumber}) {
+  List<T> chunkList<T>({int? chunkSize, int? chunkNumber}) {
     if (chunkNumber == null || chunkNumber < 1) {
       chunkNumber = 1;
     }
@@ -26,7 +26,7 @@ extension ListExtension on List {
     int from = (chunkNumber - 1) * chunkSize;
     int to =
         chunkNumber * chunkSize > length ? length : chunkNumber * chunkSize;
-    return sublist(from, to);
+    return sublist(from, to) as List<T>;
   }
 }
 
