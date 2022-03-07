@@ -1,7 +1,7 @@
 import '../utils/string_utils.dart';
 
-extension ListExtension<E, T> on List<T> {
-  T getFirstNonNull() => firstWhere((element) => element != null);
+extension ListExtension on List {
+  T getFirstNonNull<T>() => firstWhere((element) => element != null);
 
   List<List> chunkLists({int chunkSize = 10}) {
     List<List> lists = [];
@@ -14,7 +14,7 @@ extension ListExtension<E, T> on List<T> {
     return lists;
   }
 
-  List<T> chunkList({int? chunkSize, int? chunkNumber}) {
+  List chunkList({int? chunkSize, int? chunkNumber}) {
     if (chunkNumber == null || chunkNumber < 1) {
       chunkNumber = 1;
     }
