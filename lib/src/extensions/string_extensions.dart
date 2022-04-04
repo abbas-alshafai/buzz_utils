@@ -16,4 +16,7 @@ extension StringNumber on String {
 
   String setParams({required final List<String> params}) =>
       sprintf(this, params);
+
+  String capitalizeFirst() =>
+      '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
 }
