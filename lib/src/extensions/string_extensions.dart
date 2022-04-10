@@ -1,4 +1,5 @@
 import 'package:buzz_utils/src/utils/string_utils.dart';
+import 'package:flutter/material.dart';
 import 'package:sprintf/sprintf.dart';
 
 extension StringNumber on String {
@@ -17,6 +18,10 @@ extension StringNumber on String {
   String setParams({required final List<String> params}) =>
       sprintf(this, params);
 
+  String firstCapitalChar() => isEmpty ? '' : this[0].toUpperCase();
+
   String capitalizeFirst() =>
-      '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
+      isEmpty ? '' : '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
+
+  Color toColor() => Color(int.parse(this, radix: 16));
 }
