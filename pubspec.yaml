@@ -1,6 +1,6 @@
 name: buzz_utils
 description: String, lists, and maps utilities
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/abbas-alshafai/buzz_utils
 
 environment:

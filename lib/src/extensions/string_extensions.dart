@@ -23,5 +23,9 @@ extension StringNumber on String {
   String capitalizeFirst() =>
       isEmpty ? '' : '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
 
+  String capitalizeEachWord() => isEmpty
+      ? ''
+      : toLowerCase().split(' ').map((e) => e.capitalizeFirst()).join(' ');
+
   Color toColor() => Color(int.parse(this, radix: 16));
 }
